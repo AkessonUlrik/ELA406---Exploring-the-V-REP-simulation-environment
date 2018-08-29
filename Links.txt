@@ -1,8 +1,0 @@
-Follow-line:
-https://www.youtube.com/watch?v=4Y7zG48uHRo
- 
-Follow-line in V-REP:
-https://www.youtube.com/watch?v=xI-ZEewIzzI
-https://www.youtube.com/watch?v=OfpB87pRoUk&t=2578s
-
-chapter 4.1.1.3 (Following a Trajectory) of the Peter Corke’s book.
