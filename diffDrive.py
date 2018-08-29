@@ -208,6 +208,11 @@ def diffDrive(clientID):
             while not objectLeft and not objectRight:
                 objectLeft, distanceLeft = detectObject(clientID, usLeft[1])
                 objectRight, distanceRight = detectObject(clientID, usRight[1])
+                
+            # Continue forward untill the obstacle is cleared
+            while objectLeft or objectRight:
+                objectLeft, distanceLeft = detectObject(clientID, usLeft[1])
+                objectRight, distanceRight = detectObject(clientID, usRight[1])
             
              # Turn towards and drive until line is detected
             desiredDirection = -prevDirection
@@ -220,7 +225,8 @@ def diffDrive(clientID):
             for i in range(3):
                 detectionLeft[i] = detectLine(clientID, visionLeft[i])
                 detectionRight[i] = detectLine(clientID, visionRight[i])
-            while not detectionMiddle and not detectionLeft[0] and not detectionLeft[1] and not detectionLeft[2] and not detectionRight[0] and not detectionRight[1] and not detectionRight[2]:
+            while (not detectionMiddle and not detectionLeft[0] and not detectionLeft[1]
+                   and not detectionLeft[2] and not detectionRight[0] and not detectionRight[1] and not detectionRight[2]):
                 setVelocity(clientID, desiredVelocity, desiredDirection, motorLeft, motorRight)
 # =============================================================================
 #                 print(desiredDirection)
